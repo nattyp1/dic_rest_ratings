@@ -16,4 +16,24 @@ def restaurant_scores():
         scores[restaurant] = int(score)
 
     return scores 
+def add_resturants(scores):
+    #ability to add a restaurant and rating 
 
+    print("Please add a rating for your favorite resturant!")
+    restaurant = input("restaurant name")
+    rating = int(input("Rating>"))
+
+    scores[restaurant] = rating 
+
+def print_sorted_scores(scores):
+    #print restaurants and rating sorted. 
+
+    for restaurant, rating in sorted(scores.item()):
+        print(f"{restaurant} is rated at {rating}." )
+
+
+scores = restaurant_scores()
+
+add_resturants(scores)
+
+print_sorted_scores(scores)
